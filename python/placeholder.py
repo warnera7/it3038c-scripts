@@ -1,20 +1,16 @@
-if __name__ == '__main__':
+# #json stuff from module 8, to be run in the python terminal itself
+# import json, urllib.request
 
-    from howdoi import howdoi
+# r = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?zip=45218,us&appid=4d77e6ffc103503b80a32507a754582a')
 
-    print("question")
+# data = json.load(r)
 
-    askedQuestion = input()
+# print(type(data))
 
-    query = askedQuestion
+# type(data['weather'])
 
-    answer = howdoi.howdoi(query)
+# type(data['weather'][0])
 
-    print(answer)
+# type(data['weather'][0]['description'])
 
-
-    print("num of answers?")
-
-    numanswer = input()
-
-    numresponses = answer -n [numanswer]
+# data['weather'][0]['description']

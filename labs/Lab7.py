@@ -4,6 +4,7 @@ if __name__ == '__main__':
     #This script will use the howdoi module and prompt the user for their question 
     from howdoi import howdoi
     from time import sleep
+    import os 
 
     print("Please ask you question about anything coding. WARNING, any other types of questions will not work correctly!")
 
@@ -16,25 +17,29 @@ if __name__ == '__main__':
 
     print(answer)
 
-
 #just a little between to not have it jump right to the next
+
+
     print("So now that we have that question answered, lets find another question we have using another stack exchange based website")
-    sleep(3)
+    sleep(1)
     
     #URL specifying
     print("\nPlease enter the URL of the website you want to use (exclude https://www). \nWARNING, ONLY STACK EXCHANGE BASED WEBSITES WILL WORK")
 
     #this is what specifies the variable
-    HOWDOI_URL=input()
+    os.environ [HOWDOI_URL=input()]
+
+    URL =os.getenv('HOWDOI_URL')
 
     print("\nNow what is your question?")
     
-    askedQuestion = input()
+    diffaskedQuestion = input()
 
-    query = askedQuestion
+    QtoAsk = diffaskedQuestion
 
-    answer = howdoi.howdoi(query)
+    #answerResponse = (askedURL);(howdoi.howdoi(QtoAsk))
+    answerResponse = HOWDOI_URL;howdoi.howdoi(QtoAsk)
 
-    print(answer)
+    print(answerResponse)
 
 
