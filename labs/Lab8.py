@@ -21,4 +21,4 @@ itemPrice = div.text
 #print(itemPrice)
 
 #2 gets rid of he capital F, allowing me to format it better, 6 gets rid of from and the space
-print('\n'"The flower arrangement %s starts at the price %s." % (itemName,itemPrice[6:12]))
+print('\n'"The flower arrangement %s can be purchased starting at %s." % (itemName,itemPrice[6:12]))
