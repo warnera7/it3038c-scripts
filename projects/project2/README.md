@@ -12,7 +12,7 @@ To be more precise, the script uses shutil.disk_usage to grab overarching storag
 ```python
 testStorage = shutil.disk_usage(drive)
 ```
-And a while try except loop is used to continually reprompt for an input until a valid drive is specified using the above line of code to validate, this will be something you will be prompted to input.
+And a while try except loop is used to continually reprompt for an input until a valid drive is specified using the above line of code to validate, this will be something you will be prompted to input. While loops are used to sanitize and confirm that the input is a correct input before the user is prompted for the next.
 
 
 Normally shutil.disk_usage will give an output showing total, used and free for that drive in bytes. 
