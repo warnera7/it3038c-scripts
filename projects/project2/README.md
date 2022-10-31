@@ -1,7 +1,8 @@
 # Project 2, Pesky Disk Space
 This was all done on a Windows machine, non Windows machines should still work, but there may be errors not seen on a Windows machine.
-
 This is building on my project 1 script.
+
+This script will let you see your total, used and free storage on a drive on your computer, and it can be specified to one of those three outputs, or all of them and in bytes, MB or GB.
 
 Besides giving inputs when prompted, this script runs itself - meaning all you have to do is mess around with your inputs to test it and see what works. 
 
