@@ -15,8 +15,9 @@ testStorage = shutil.disk_usage(drive)
 And a while try except loop is used to continually reprompt for an input until a valid drive is specified using the above line of code to validate, this will be something you will be prompted to input. While loops are used to sanitize and confirm that the input is a correct input before the user is prompted for the next.
 
 
-Normally shutil.disk_usage will give an output showing total, used and free for that drive in bytes. 
+Normally shutil.disk_usage will give an output showing total, used and free for that drive in bytes. Below is the normal output for a drive using just shutil.disk_usage
 
+![image](https://user-images.githubusercontent.com/111792039/198922639-6f872665-9895-4358-adc3-b494280892f9.png)
 
 This script allows you to choose a single item of the output - total, used or free, or all of them. And it lets you choose if you want them in bytes, megabytes or gigabytes.
 
