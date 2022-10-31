@@ -22,6 +22,8 @@ Normally shutil.disk_usage will give an output showing total, used and free for 
 
 This script allows you to choose a single item of the output - total, used or free, or all of them. And it lets you choose if you want them in bytes, megabytes or gigabytes.
 
+This is done through the use of indexes - where 0 is assigned to total, 1 assigned to used and 2 assigned to free, which can then be used individually and converted to your chosen output.
+
 Going in order of what you will see
 1. The script will ask you for a drive and reprompt until a valid drive or path is given.
 2. Then you will be asked for your preference of how the output will be displayed - bytes, megabytes or gigabytes and prompted until you give a valid response. Feel free to check if the conversions are correct as well if you want to.
