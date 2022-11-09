@@ -116,4 +116,4 @@ while chosenspace == 0 or 1 or 2 or 4:
 #print(testStorage)
 #prints the drive total, used and free in bytes
     # testStorage[0] shows just the total bytes and nothing else - can use this to format it into MB or GB
-    # [0:2] for some reason breaks the output
+    # [0:2] breaks the output
