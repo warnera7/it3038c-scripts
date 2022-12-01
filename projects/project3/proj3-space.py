@@ -1,11 +1,9 @@
 import os
 import shutil
+from pathlib import Path, WindowsPath, PurePath
+from prettytable import PrettyTable
+import time
 
-
-#throwing this into a function that way you can choose which you want to run
-
-print("Would you like the drive space checker, filefinder or both? \ndrivr - for drive, \nfindr - for file finder \nboth - for both")
-runWhat = input()
 
 def drivechecker():
 
@@ -121,16 +119,102 @@ def drivechecker():
             continue
         break
 
-if runWhat == 'drivr':
-    drivechecker()
+def filefinder():
+    print("What directory/path would you like to check for files and their sizes?")
+    givenPath = input()
 
-elif runWhat == 'findr':
-    print("placeholder for filesize thing")
+    #getting the path
+    p = Path(givenPath)
 
-elif runWhat == 'both':
-    drivechecker()
-    print("placeholder for filesize thing")
 
-else:
-    print("That is not a valid choice, please enter one of the responses. \ndrivr - for drive, \nfindr - for file finder \nboth - for both")
+    while givenPath != str:
+        #making sure it is a valid path/drive to be checked
+        try:
+            #nothing within pathlib was working to validate it was there without it being an infinite except loop
+            sizecheck = os.path.getsize(givenPath)
+
+        #reprompting if given an something not valid
+        except:
+            print("please enter a valid path")
+            givenPath = input()
+            continue
+        break
+
+
+    print("what file extension would you like to search for in the path? (ex. .py)")
+    fextension = input()
+
+    #finding items with the same extensions in the path
+    ex = sorted(Path(givenPath).glob('*' + fextension))
+
+    #sanitising the extension input by checking the length of the variable list - to see if it has data or is empty
+    while len(ex) == 0:
+        try:
+            #reprompting to allow the variable to change and a working extension to be accepted
+            print("There are no files with this extension, please enter another.")
+            fextension = input()
+            ex = sorted(Path(givenPath).glob('*' + fextension))
+            continue
+
+        except:
+            print("you shouldn't be here")
+        break
+
+    #code snippet inspired by https://zetcode.com/python/pathlib/ and their PrettyTable example        
+    prettab = PrettyTable()
+    prettab.field_names = ["File name", "Size (MB)"]
+
+    #alligns the data and headings 
+    prettab.align["File name"] = "l"
+    prettab.align["Size (MB)"] = "r"
+
+    #loop to get the files with their names and sizes
+    for x in p.glob('**/*' + fextension):
+
+        size = x.stat().st_size
+        sizeMB = round(size / 1024, 2) 
+        prettab.add_row([x.name, sizeMB])
+
+    #for sorting the data instead of it just being all thrown in
+    print("\nSort by name or by size? \nname - sort by name, or size - sort by size")
+    pretSort = input()
+      
+    #sorts in ascending order
+    if pretSort == "name":
+        print(prettab.get_string(sortby="File name"))
+    elif pretSort == "size":
+        print(prettab.get_string(sortby="Size (MB)"))
+    else:
+        print('Please enter "name" or "size" to sort the output')
+        pretSort = input()
+
+        
+#this block is calling the functions based on what the user asks to use
+runWhat = ""
+
+while runWhat != str:
+    
+    print("Would you like the drive space checker, filefinder/file size or both? \ndrivr - for drive, \nfindr - for file finder \nboth - for both")
     runWhat = input()
+    try:
+        if runWhat == 'drivr':
+            drivechecker()
+
+        elif runWhat == 'findr':
+            filefinder()
+
+        #runs both parts and has a timer delay between to allow you to see the result of the first
+        elif runWhat == 'both':
+            drivechecker()
+            time.sleep(2)
+            filefinder()
+        
+        else:
+            print("is this working")
+            continue
+
+    except:
+        print("That is not a valid choice, please enter one of the responses. \ndrivr - for drive, \nfindr - for file finder \nboth - for both, test ")
+        runWhat = input()
+        continue
+    break

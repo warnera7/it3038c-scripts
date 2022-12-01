@@ -1,8 +1,9 @@
 # Project 3, Pesky Disk Space and Filefinder/Filesizer
+
+### **You will need to install prettytable to get some of part 2 to display correctly. Part 1 will work without it still.**
+
 This was all done on a Windows machine, non Windows machines should still work, but there may be errors not seen on a Windows machine.
 This is building on my project 2 script.
-
-**You will need to install prettytable to get some of part 2 to display correctly. Part 1 will work without it still.**
 
 ## Part 1, Pesky Disk Space
 
@@ -69,3 +70,11 @@ print(" bytes")
 
 
 ## Part 2 Filefinder/Filesizer
+
+### If you havent already, you need to install prettytable, can be done using the command: 
+```python
+pip install prettytable
+```
+
+**Due to how it is set up, setting the path to a directory with only folders and no file will not display results**
+
