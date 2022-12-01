@@ -85,6 +85,7 @@ pip install prettytable
 Part 2 uses the python module pathlib and its Path function to do most of the routing for files. It additionally uses PrettyTable to help display the returned results in an easier to read output. os is also used to sanatize the input for the path, tried to get it working with a pathlib function/arg but none seemed to work as well as os.path.getsize.
 
 Here is a sample run of the file finder part
+
 ![image](https://user-images.githubusercontent.com/111792039/205000677-eabf2694-04e8-4b5f-8e44-206249172a13.png)
 
 
