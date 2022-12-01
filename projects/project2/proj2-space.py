@@ -1,6 +1,6 @@
 import shutil
 
-print("Please enter the path or drive you want to check.")
+print("Please enter the drive you want to check.")
 drive = input()
 
 #method that takes drive checks for drive space, total, used and free
