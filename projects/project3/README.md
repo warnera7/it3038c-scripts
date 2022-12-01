@@ -105,7 +105,7 @@ At the end of the file is the variable "runWhat" which is used to allow users to
 
 
 
-##Project Usefulness and Challenges
+## Project Usefulness and Challenges
 
 I wanted to make something that could be used instead of looking at the file explorer and show you data that you might have to look in multiple places all in one. With the drive space part, I was looking for something different and it caught my attention. Plus who doesn't like being able to see how much space we actually have on our drives before rounding (even though I did round) and how much is being used by what.
 
